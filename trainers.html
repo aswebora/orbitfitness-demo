@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Trainers - Orbit Fitness | Certified Personal Trainers in Wakad, Pimpri-Chinchwad</title>
+    <meta name="description" content="Meet our certified personal trainers at Orbit Fitness in Wakad, Pimpri-Chinchwad. Expert fitness professionals specializing in weight training, bodybuilding, and personalized workout plans.">
+    <meta name="keywords" content="Personal trainers Wakad, Certified fitness trainers Pimpri-Chinchwad, Gym trainers Wakad, Bodybuilding coach Pune, Orbit Fitness trainers">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="canonical" href="http://localhost:5500/trainers.html">
+    <!-- OpenGraph / Twitter SEO -->
+    <meta property="og:title" content="Orbit Fitness Trainers - Certified Personal Trainers in Wakad, Pimpri-Chinchwad">
+    <meta property="og:description" content="Meet our certified personal trainers at Orbit Fitness. Strength, bodybuilding, HIIT, rehab and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:5500/trainers.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orbit Fitness Trainers - Certified Personal Trainers in Wakad, Pimpri-Chinchwad">
+    <meta name="twitter:description" content="Meet our certified personal trainers at Orbit Fitness. Strength, bodybuilding, HIIT, rehab and more.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80">
+    <style>
+        /* Prevent horizontal overflow */
+        html, body { overflow-x: hidden; width: 100%; }
+        img, video, iframe { max-width: 100%; height: auto; }
+        :root {
+            --primary: #545050;
+            --secondary: #333333;
+            --dark: #121212;
+            --light: #f8f8f8;
+            --accent: #00ff00;
+        }
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Oswald', sans-serif;
+        }
+        .trainers-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            border-bottom: 4px solid var(--primary);
+            min-height: 60vh;
+            position: relative;
+        }
+        .trainers-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(128, 128, 128, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+        }
+        .trainer-card {
+            transition: all 0.3s ease;
+        }
+        .trainer-card {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .trainer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 20px rgba(128, 128, 128, 0.15);
+        }
+        .trainer-card:hover img {
+            transform: scale(1.05);
+        }
+        .specialty-badge {
+            background: linear-gradient(45deg, #6b7280, #4b5563);
+        }
+        
+        /* Enhanced Transitions */
+        * {
+            transition: all 0.3s ease;
+        }
+        
+        .trainer-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Shiny hover effect for navbar links */
+        nav a { position: relative; overflow: hidden; }
+        nav a::after {
+            content: ""; position: absolute; top: 0; left: -120%; width: 120%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: left 0.5s; pointer-events: none;
+        }
+        nav a:hover::after { left: 120%; }
+        /* Disable sweep on brand only */
+        .brand-link::after { content: none !important; }
+        /* Brand gradient shine (matches home) */
+        .brand-title {
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ffffff, #ff3333, #ffffff);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; color: transparent; background-size: 200% auto; animation: shineText 3s linear infinite;
+        }
+        @keyframes shineText { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+
+        /* Mobile-specific fixes */
+        @media (max-width: 768px) {
+            .container, section, nav { max-width: 100vw; overflow-x: hidden; }
+        }
+
+        /* ===== Brand Color System (from user palette) ===== */
+        :root {
+            --brand-black: #000000;
+            --brand-blue: #36B3E8;
+            --brand-white: #FFFFFF;
+            --brand-darkgray: #1C1C1C;
+            --brand-steel: #2F80ED;
+            --brand-lime: #00FF7F;
+            --brand-lightgray: #F5F5F5;
+            --brand-mediumgray: #9E9E9E;
+        }
+        body { background-color: var(--brand-black); color: var(--brand-white); }
+        .bg-gray-900 { background-color: var(--brand-darkgray) !important; }
+        .bg-black { background-color: var(--brand-black) !important; }
+        .text-gray-400 { color: var(--brand-mediumgray) !important; }
+        .bg-gray-800 { background-color: #121212 !important; }
+        .border-gray-700 { border-color: var(--brand-darkgray) !important; }
+        .bg-gray-100 { background-color: var(--brand-lightgray) !important; }
+
+        .text-green-400, .text-green-500, .text-green-600 { color: var(--brand-blue) !important; }
+        .bg-green-500, .bg-green-600 { background-color: var(--brand-blue) !important; }
+        .bg-green-700 { background-color: var(--brand-steel) !important; }
+        .border-green-600 { border-color: var(--brand-steel) !important; }
+        .ring-green-600 { --tw-ring-color: var(--brand-steel) !important; }
+        .hover\:bg-green-600:hover { background-color: var(--brand-steel) !important; }
+        .hover\:bg-green-700:hover { background-color: #2366c8 !important; }
+        .hover\:text-green-400:hover { color: var(--brand-steel) !important; }
+    </style>
+    <style>
+        /* Force WhatsApp icons to be WhatsApp green */
+        a[href*="wa.me"] svg,
+        a[href*="wa.me"] i,
+        .whatsapp-icon svg,
+        .whatsapp-icon i { color: #25D366 !important; stroke: #25D366 !important; }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-black text-white sticky top-0 z-50 shadow-lg border-b border-gray-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center brand-link" aria-label="Orbit Fitness Home">
+                <img src="logo.jpeg" alt="Orbit Fitness Logo" class="h-10 md:h-12 w-auto object-contain" loading="eager" fetchpriority="high">
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-green-400 font-medium">Home</a>
+                <a href="about.html" class="hover:text-green-400">About</a>
+                <a href="facilities.html" class="hover:text-green-400">Facilities</a>
+                <a href="membership.html" class="hover:text-green-400">Membership</a>
+                <a href="trainers.html" class="hover:text-green-400 text-green-400">Trainers</a>
+                <a href="contact.html" class="hover:text-green-400">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-4 py-2" role="menu" aria-hidden="true">
+            <a href="index.html" class="block py-2 hover:text-green-400">Home</a>
+            <a href="about.html" class="block py-2 hover:text-green-400">About</a>
+            <a href="facilities.html" class="block py-2 hover:text-green-400">Facilities</a>
+            <a href="membership.html" class="block py-2 hover:text-green-400">Membership</a>
+            <a href="trainers.html" class="block py-2 hover:text-green-400 text-green-400">Trainers</a>
+            <a href="contact.html" class="block py-2 hover:text-green-400">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="trainers-hero text-white py-32 px-4">
+        <div class="container mx-auto text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 uppercase tracking-wider">MEET OUR EXPERTS</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-semibold">Certified professionals dedicated to your fitness success</p>
+        </div>
+    </section>
+
+    <!-- Head Trainer -->
+    <section class="py-16 bg-gray-900" style="background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">MEET OUR HEAD TRAINER</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-black p-8 rounded-lg trainer-card" data-aos="fade-up">
+                    <div class="md:flex">
+                        <div class="md:w-1/3">
+                            <img src="gtm1.jpg" alt="Rajesh Kumar - Head Trainer" class="w-full h-80 md:h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="md:w-2/3 p-8">
+                            <div class="flex items-center mb-4">
+                                <h3 class="text-2xl font-bold mr-4">Rajesh Kumar</h3>
+                                <span class="specialty-badge text-white px-3 py-1 rounded-full text-sm font-semibold">HEAD TRAINER</span>
+                            </div>
+                            <p class="text-gray-400 mb-6">With over 12 years of experience in fitness training and bodybuilding, Rajesh leads our team with expertise in strength training, nutrition planning, and body transformation programs.</p>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h4 class="font-semibold mb-3 text-red-400">Certifications</h4>
+                                    <ul class="space-y-1 text-sm text-gray-400">
+                                        <li>• ACSM Certified Personal Trainer</li>
+                                        <li>• NASM Corrective Exercise Specialist</li>
+                                        <li>• Sports Nutrition Certified</li>
+                                        <li>• First Aid & CPR Certified</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-3 text-red-400">Specializations</h4>
+                                    <ul class="space-y-1 text-sm text-gray-400">
+                                        <li>• Strength & Powerlifting</li>
+                                        <li>• Body Transformation</li>
+                                        <li>• Competition Prep</li>
+                                        <li>• Injury Rehabilitation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <span class="text-sm text-gray-400">Experience:</span>
+                                <span class="font-bold text-red-400">12+ Years</span>
+                                <span class="text-sm text-gray-400">|</span>
+                                <span class="text-sm text-gray-400">Clients Trained:</span>
+                                <span class="font-bold text-red-400">500+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Trainers -->
+    <section class="py-16 bg-black" style="background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">PERSONAL TRAINERS</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Trainer 1 -->
+                <div class="bg-gray-900 p-6 rounded-lg trainer-card transition duration-300" data-aos="fade-up">
+                    <div class="relative overflow-hidden">
+                        <img src="AdobeStock_1449227720_Preview.jpeg" alt="Priya Sharma - Personal Trainer" class="w-full h-64 object-cover transition duration-500" loading="lazy">
+                        
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Priya Sharma</h3>
+                        <p class="text-gray-400 font-semibold mb-3">Women's Fitness Specialist</p>
+                        <p class="text-gray-400 text-sm mb-4">Expert in women's fitness, weight loss, and functional training with 8 years of experience.</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Weight Loss</span>
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Functional Training</span>
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Yoga</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Experience: <strong class="text-white">8 Years</strong></span>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 2 -->
+                <div class="bg-gray-900 p-6 rounded-lg trainer-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden">
+                        <img src="AdobeStock_168306885_Preview.jpeg" alt="Vikram Singh - Personal Trainer" class="w-full h-64 object-cover transition duration-500" loading="lazy">
+                        
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Vikram Singh</h3>
+                        <p class="text-gray-400 font-semibold mb-3">Strength & Conditioning Coach</p>
+                        <p class="text-gray-400 text-sm mb-4">Former athlete specializing in strength training, powerlifting, and sports conditioning.</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Powerlifting</span>
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Strength Training</span>
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Sports Conditioning</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Experience: <strong class="text-white">10 Years</strong></span>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 3 -->
+                <div class="bg-gray-900 p-6 rounded-lg trainer-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden">
+                        <img src="66.jpeg" alt="Amit Patel - Personal Trainer" class="w-full h-64 object-cover transition duration-500" loading="lazy">
+                        
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Amit Patel</h3>
+                        <p class="text-gray-400 font-semibold mb-3">Bodybuilding Coach</p>
+                        <p class="text-gray-400 text-sm mb-4">Competitive bodybuilder specializing in muscle building, contest prep, and advanced training.</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Bodybuilding</span>
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Contest Prep</span>
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Muscle Building</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Experience: <strong class="text-white">9 Years</strong></span>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 4 -->
+                <div class="bg-gray-900 p-6 rounded-lg trainer-card transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden">
+                        <img src="AdobeStock_393433932_Preview.jpeg" alt="Sneha Desai - Personal Trainer" class="w-full h-64 object-cover transition duration-500" loading="lazy">
+                        
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Sneha Desai</h3>
+                        <p class="text-gray-400 font-semibold mb-3">Nutrition & Wellness Coach</p>
+                        <p class="text-gray-400 text-sm mb-4">Certified nutritionist focusing on holistic wellness, weight management, and lifestyle transformation.</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Nutrition Planning</span>
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Weight Management</span>
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Wellness Coaching</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Experience: <strong class="text-white">6 Years</strong></span>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 5 -->
+                <div class="bg-gray-900 p-6 rounded-lg trainer-card transition duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden">
+                        <img src="5.jpg" alt="Rohit Jain - Personal Trainer" class="w-full h-64 object-cover transition duration-500">
+                        
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Rohit Jain</h3>
+                        <p class="text-gray-400 font-semibold mb-3">Functional Movement Specialist</p>
+                        <p class="text-gray-400 text-sm mb-4">Expert in corrective exercises, injury prevention, and functional movement patterns.</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Corrective Exercise</span>
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Injury Prevention</span>
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Rehabilitation</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Experience: <strong class="text-white">7 Years</strong></span>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 6 -->
+                <div class="bg-gray-900 p-6 rounded-lg trainer-card transition duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative overflow-hidden">
+                        <img src="AdobeStock_401385173_Preview.jpeg" alt="Kavya Reddy - Personal Trainer" class="w-full h-64 object-cover transition duration-500" loading="lazy">
+                        
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Kavya Reddy</h3>
+                        <p class="text-gray-400 font-semibold mb-3">HIIT & Cardio Specialist</p>
+                        <p class="text-gray-400 text-sm mb-4">High-energy trainer specializing in HIIT workouts, cardio training, and group fitness.</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">HIIT Training</span>
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Cardio Workouts</span>
+                                <span class="bg-gray-700 text-xs px-2 py-1 rounded">Group Fitness</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Experience: <strong class="text-white">5 Years</strong></span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-6 text-white">BOOK A PERSONAL TRAINING SESSION</h2>
+                <p class="text-xl mb-8 text-gray-300">Ready to take your fitness to the next level? Book a session with one of our expert trainers.</p>
+                
+                <div class="bg-gray-900 text-white rounded-xl p-8 shadow-xl">
+                    <div class="grid md:grid-cols-2 gap-8 text-left">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 text-white">What's Included:</h3>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> Fitness assessment & goal setting</li>
+                                <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> Personalized workout plan</li>
+                                <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> Proper form & technique guidance</li>
+                                <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> Nutrition recommendations</li>
+                                <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> Progress tracking & adjustments</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 text-white">Session Rates:</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center p-3 bg-gray-800 rounded">
+                                    <span class="font-semibold">Single Session</span>
+                                    <span class="text-green-400 font-bold">₹700 - ₹1000</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-800 rounded">
+                                    <span class="font-semibold">5-Session Package</span>
+                                    <span class="text-green-400 font-bold">₹3,500 - ₹4,500</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gray-800 rounded">
+                                    <span class="font-semibold">10-Session Package</span>
+                                    <span class="text-green-400 font-bold">₹6,500 - ₹8,500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="contact.html" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Book Now</a>
+                        <a href="https://wa.me/919876543210" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 flex items-center justify-center">
+                            <i data-feather="message-circle" class="mr-2 w-5 h-5"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i data-feather="activity" class="text-green-500 mr-2"></i> Orbit Fitness
+                    </h3>
+                    <p class="mb-4">Pune's premium fitness destination with state-of-the-art facilities and expert trainers.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-green-400 transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="hover:text-green-400 transition duration-300">About Us</a></li>
+                        <li><a href="facilities.html" class="hover:text-green-400 transition duration-300">Facilities</a></li>
+                        <li><a href="membership.html" class="hover:text-green-400 transition duration-300">Membership</a></li>
+                        <li><a href="trainers.html" class="hover:text-green-400 transition duration-300">Trainers</a></li>
+                        <li><a href="contact.html" class="hover:text-green-400 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Opening Hours</h4>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between">
+                            <span>Monday - Friday</span>
+                            <span>5AM - 10PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>5AM - 10PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>5AM - 10PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <address class="not-italic">
+                        <p class="mb-2">4th Floor, Olive Orchard</p>
+                        <p class="mb-2">Unit No. 404, Sr. No. 126/2, Kala Khadak Rd</p>
+                        <p class="mb-2">Swami Vivekanand Nagar, Wakad, Pune</p>
+                        <p class="mb-2">Pimpri-Chinchwad, Maharashtra 411057</p>
+                        <p class="mb-2">+91 98765 43210</p>
+                        <p class="mb-2">info@Orbitfitness.com</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Orbit Fitness. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919876543210" class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50">
+        <i data-feather="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>

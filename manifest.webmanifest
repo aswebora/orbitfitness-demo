@@ -1,0 +1,18 @@
+{
+  "name": "Orbit Fitness",
+  "short_name": "OrbitFitness",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#16a34a",
+  "description": "Orbit Fitness in Wakad, Pimpri-Chinchwad — premium facilities, expert trainers, and disciplined environment.",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

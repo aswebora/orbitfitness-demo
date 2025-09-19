@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Update this to your production domain when deployed
+Sitemap: http://localhost:5500/sitemap.xml

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Plans - Orbit Fitness | Best Gym Membership in Wakad, Pimpri-Chinchwad</title>
+    <meta name="description" content="Join Orbit Fitness with flexible membership plans starting from ₹1,500/month. Choose from monthly, quarterly, half-yearly, and annual plans with personal training options.">
+    <meta name="keywords" content="Gym membership Wakad, Affordable gym plans Pimpri-Chinchwad, Fitness membership Wakad, Orbit Fitness pricing, Personal training Pune">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="canonical" href="http://localhost:5500/membership.html">
+    <!-- OpenGraph / Twitter SEO -->
+    <meta property="og:title" content="Orbit Fitness Membership Plans - Flexible and Affordable">
+    <meta property="og:description" content="Choose from monthly, quarterly, half-yearly, and annual plans. Personal training add-ons available.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:5500/membership.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orbit Fitness Membership Plans - Flexible and Affordable">
+    <meta name="twitter:description" content="Choose from monthly, quarterly, half-yearly, and annual plans. Personal training add-ons available.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80">
+    <style>
+        /* Prevent horizontal overflow */
+        html, body { overflow-x: hidden; width: 100%; }
+        img, video, iframe { max-width: 100%; height: auto; }
+        *, *::before, *::after { box-sizing: border-box; }
+        .container, .grid, section, nav { min-width: 0; }
+        p, a, h1, h2, h3, h4, h5, h6 { word-break: break-word; overflow-wrap: anywhere; }
+        :root {
+            --primary: #545050;
+            --secondary: #333333;
+            --dark: #121212;
+            --light: #f8f8f8;
+            --accent: #00ff00;
+        }
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Oswald', sans-serif;
+        }
+        .membership-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('counter.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            border-bottom: 4px solid var(--primary);
+            min-height: 60vh;
+            position: relative;
+        }
+        .membership-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(128, 128, 128, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+        }
+        .membership-card {
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+        .membership-card {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .membership-card:hover {
+            transform: scale(1.08) translateY(-6px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(128, 128, 128, 0.2);
+            z-index: 30;
+        }
+        .popular-plan {
+            position: relative;
+            border: 2px solid #16a34a;
+            overflow: visible; /* ensure badge is visible */
+        }
+        .popular-plan::before { content: none; }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .membership-hero {
+                min-height: 50vh;
+                padding: 2rem 1rem;
+                background-attachment: scroll;
+            }
+            section[style*="background-attachment"] {
+                background-attachment: scroll !important;
+            }
+            .membership-card {
+                margin-bottom: 2rem;
+            }
+            .membership-card:hover {
+                transform: none;
+            }
+            .grid {
+                gap: 1.5rem;
+            }
+            .py-16 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            .py-32 {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+            .px-8 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .text-3xl {
+                font-size: 1.875rem;
+            }
+            .text-4xl {
+                font-size: 2.25rem;
+            }
+            .text-6xl {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .membership-hero {
+                min-height: 40vh;
+            }
+            .py-16 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+            .mb-12 {
+                margin-bottom: 2rem;
+            }
+            .text-2xl {
+                font-size: 1.5rem;
+            }
+            .text-3xl {
+                font-size: 1.75rem;
+            }
+            .popular-plan::before {
+                font-size: 10px;
+                padding: 2px 12px;
+            }
+        }
+
+        /* Shiny hover effect for navbar links */
+        nav a {
+            position: relative;
+            overflow: hidden;
+        }
+        nav a::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 120%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: left 0.5s;
+            pointer-events: none;
+        }
+        nav a:hover::after {
+            left: 120%;
+        }
+        /* Disable shiny sweep on the brand link only */
+        .brand-link::after { content: none !important; }
+
+        /* Optional: gradient shine for brand title (matches home) */
+        .brand-title {
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ffffff, #ff3333, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shineText 3s linear infinite;
+        }
+        @keyframes shineText {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        /* Mobile-specific fixes */
+        @media (max-width: 768px) {
+            .container, section, nav { max-width: 100vw; overflow-x: hidden; }
+            .grid { overflow-x: hidden; }
+            /* Disable hover scale on touch to avoid overflow-causing transforms */
+            .membership-card:hover { transform: none !important; }
+        }
+
+        /* ===== Brand Color System (from user palette) ===== */
+        :root {
+            --brand-black: #000000;
+            --brand-blue: #36B3E8;      /* light blue primary */
+            --brand-white: #FFFFFF;
+            --brand-darkgray: #1C1C1C;  /* section backgrounds, cards */
+            --brand-steel: #2F80ED;     /* hover, sub-headings */
+            --brand-lime: #00FF7F;      /* optional CTA */
+            --brand-lightgray: #F5F5F5; /* backgrounds */
+            --brand-mediumgray: #9E9E9E;/* secondary text, borders */
+        }
+        body { background-color: var(--brand-black); color: var(--brand-white); }
+        .bg-gray-900 { background-color: var(--brand-darkgray) !important; }
+        .bg-black { background-color: var(--brand-black) !important; }
+        .text-gray-400 { color: var(--brand-mediumgray) !important; }
+        .bg-gray-800 { background-color: #121212 !important; }
+        .border-gray-700 { border-color: var(--brand-darkgray) !important; }
+        .bg-gray-100 { background-color: var(--brand-lightgray) !important; }
+
+        /* Map Tailwind greens to brand blues */
+        .text-green-400, .text-green-500, .text-green-600 { color: var(--brand-blue) !important; }
+        .bg-green-500, .bg-green-600 { background-color: var(--brand-blue) !important; }
+        .bg-green-700 { background-color: var(--brand-steel) !important; }
+        .border-green-600 { border-color: var(--brand-steel) !important; }
+        .ring-green-600 { --tw-ring-color: var(--brand-steel) !important; }
+        .hover\:bg-green-600:hover { background-color: var(--brand-steel) !important; }
+        .hover\:bg-green-700:hover { background-color: #2366c8 !important; }
+        .hover\:text-green-400:hover { color: var(--brand-steel) !important; }
+
+        /* Optional CTA lime variants */
+        .cta-lime { background-color: var(--brand-lime) !important; color: #002b1a !important; }
+        .cta-lime:hover { filter: brightness(0.9); }
+
+        /* Links and brand title accents */
+        a { color: var(--brand-blue); }
+        a:hover { color: var(--brand-steel); }
+        .brand-title { background: linear-gradient(90deg, #fff, var(--brand-blue), #fff); }
+        
+        /* Force WhatsApp icons to be WhatsApp green */
+        a[href*="wa.me"] svg,
+        a[href*="wa.me"] i,
+        .whatsapp-icon svg,
+        .whatsapp-icon i { color: #25D366 !important; stroke: #25D366 !important; }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- OfferCatalog Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "OfferCatalog",
+      "name": "Orbit Fitness Membership Plans",
+      "url": "http://localhost:5500/membership.html",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Monthly Membership",
+          "priceCurrency": "INR",
+          "price": "1500",
+          "category": "membership",
+          "url": "https://wa.me/919876543210?text=I%20want%20to%20book%20the%20Monthly%20package"
+        },
+        {
+          "@type": "Offer",
+          "name": "Quarterly Membership",
+          "priceCurrency": "INR",
+          "price": "4000",
+          "category": "membership",
+          "url": "https://wa.me/919876543210?text=I%20want%20to%20book%20the%20Quarterly%20package"
+        },
+        {
+          "@type": "Offer",
+          "name": "Half-Yearly Membership",
+          "priceCurrency": "INR",
+          "price": "7500",
+          "category": "membership",
+          "url": "https://wa.me/919876543210?text=I%20want%20to%20book%20the%20Half-Yearly%20package"
+        },
+        {
+          "@type": "Offer",
+          "name": "Annual Membership",
+          "priceCurrency": "INR",
+          "price": "11999",
+          "category": "membership",
+          "url": "https://wa.me/919876543210?text=I%20want%20to%20book%20the%20Annual%20package"
+        }
+      ]
+    }
+    </script>
+    <!-- Navigation -->
+    <nav class="bg-black text-white sticky top-0 z-50 shadow-lg border-b border-gray-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center brand-link" aria-label="Orbit Fitness Home">
+                <video class="h-10 md:h-12 w-auto object-contain" autoplay muted loop playsinline poster="logo.jpeg">
+                    <source src="logo vid.mp4" type="video/mp4">
+                </video>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-green-400 font-medium">Home</a>
+                <a href="about.html" class="hover:text-green-400">About</a>
+                <a href="facilities.html" class="hover:text-green-400">Facilities</a>
+                <a href="membership.html" class="hover:text-green-400 text-green-400">Membership</a>
+                <a href="trainers.html" class="hover:text-green-400">Trainers</a>
+                <a href="contact.html" class="hover:text-green-400">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-4 py-2" role="menu" aria-hidden="true">
+            <a href="index.html" class="block py-2 hover:text-green-400">Home</a>
+            <a href="about.html" class="block py-2 hover:text-green-400">About</a>
+            <a href="facilities.html" class="block py-2 hover:text-green-400">Facilities</a>
+            <a href="membership.html" class="block py-2 hover:text-green-400 text-green-400">Membership</a>
+            <a href="trainers.html" class="block py-2 hover:text-green-400">Trainers</a>
+            <a href="contact.html" class="block py-2 hover:text-green-400">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="membership-hero text-white py-20 sm:py-32 px-4">
+        <div class="container mx-auto text-center" data-aos="fade-up">
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 uppercase tracking-wider leading-tight">CHOOSE YOUR PLAN</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-semibold leading-relaxed px-4">Flexible membership options to fit your lifestyle and budget</p>
+        </div>
+    </section>
+
+    <!-- Membership Plans -->
+    <section class="py-16 bg-gray-900" style="background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">MEMBERSHIP PLANS</h2>
+            <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Choose the plan that best fits your fitness goals and schedule. All plans include unlimited gym access during operating hours.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <!-- Monthly Plan -->
+                <div class="bg-black border border-gray-700 rounded-lg overflow-hidden membership-card transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:z-20" data-aos="fade-up">
+                    <div class="bg-gray-800 text-white p-6 text-center h-48 flex flex-col items-center justify-end pt-6">
+                        <h3 class="text-2xl font-bold mb-2">Monthly</h3>
+                        <div class="text-3xl font-bold text-green-400 mb-2">₹1,500</div>
+                        <p class="text-gray-400">per month</p>
+                        <p class="text-sm bg-green-700 rounded px-2 py-1 inline-block opacity-0 select-none pointer-events-none">placeholder</p>
+                    </div>
+                    <div class="p-6 flex flex-col h-full">
+                        <ul class="space-y-3 mb-6 flex-1 text-white">
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Unlimited gym access</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Basic workout guidance</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Locker facility</span></li>
+                            <li class="flex items-center"><i data-feather="x" class="text-gray-500 mr-3 w-5 h-5"></i> <span class="text-gray-500">Personal training sessions</span></li>
+                            <li class="flex items-center"><i data-feather="x" class="text-gray-500 mr-3 w-5 h-5"></i> <span class="text-gray-500">Diet consultation</span></li>
+                        </ul>
+                        <button class="w-full mt-auto bg-[#36B3E8] hover:bg-[#2F80ED] text-white font-bold py-2 px-6 rounded shadow transition duration-300">Book Package</button>
+                    </div>
+                </div>
+
+                <!-- Quarterly Plan -->
+                <div class="bg-black border border-gray-700 rounded-lg shadow-lg overflow-hidden membership-card popular-plan transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:z-20" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gray-800 text-white p-6 text-center h-48 flex flex-col items-center justify-end pt-6 relative">
+                        <span class="absolute top-3 right-3 z-10 bg-green-600 text-white text-[10px] font-bold rounded-full w-14 h-14 flex items-center justify-center shadow-lg ring-4 ring-gray-900/60 uppercase tracking-wide">Popular</span>
+                        <h3 class="text-2xl font-bold mb-2">Quarterly</h3>
+                        <div class="text-3xl font-bold text-green-400 mb-2">₹4,000</div>
+                        <p class="text-gray-300">3 months</p>
+                        <p class="text-sm bg-green-700 rounded px-2 py-1 inline-block">Save ₹500</p>
+                    </div>
+                    <div class="p-6 flex flex-col h-full">
+                        <ul class="space-y-3 mb-6 flex-1 text-white">
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Unlimited gym access</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Basic workout guidance</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Locker facility</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>2 Personal training sessions</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Basic diet consultation</span></li>
+                        </ul>
+                        <button class="w-full mt-auto bg-[#36B3E8] hover:bg-[#2F80ED] text-white font-bold py-2 px-6 rounded shadow transition-all duration-300 transform hover:scale-105">Book Package</button>
+                    </div>
+                </div>
+
+                <!-- Half-Yearly Plan -->
+                <div class="bg-black text-white border border-gray-700 rounded-lg overflow-hidden membership-card transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:z-20" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gray-800 text-white p-6 text-center h-48 flex flex-col items-center justify-end pt-6">
+                        <h3 class="text-2xl font-bold mb-2">Half-Yearly</h3>
+                        <div class="text-3xl font-bold text-green-400 mb-2">₹7,500</div>
+                        <p class="text-gray-300">6 months</p>
+                        <p class="text-sm bg-green-600 rounded px-2 py-1 inline-block">Save ₹1,500</p>
+                    </div>
+                    <div class="p-6 flex flex-col h-full">
+                        <ul class="space-y-3 mb-6 flex-1 text-white">
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Unlimited gym access</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Full workout guidance</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Priority locker access</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>5 Personal training sessions</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Detailed diet consultation</span></li>
+                        </ul>
+                        <button class="w-full mt-auto bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3 px-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">Book Package</button>
+                    </div>
+                </div>
+
+                <!-- Annual Plan -->
+                <div class="bg-black border border-gray-700 rounded-lg overflow-hidden membership-card transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:z-20" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-gray-800 text-white p-6 text-center h-48 flex flex-col items-center justify-end pt-6">
+                        <h3 class="text-2xl font-bold mb-2">Annual</h3>
+                        <div class="text-3xl font-bold text-green-400 mb-2">₹11,999</div>
+                        <p class="text-gray-300">12 months • Pre-Sales Offer</p>
+                        <p class="text-sm bg-green-600 rounded px-2 py-1 inline-block">Save ₹2,001 + Free Bag</p>
+                    </div>
+                    <div class="p-6 flex flex-col h-full">
+                        <ul class="space-y-3 mb-6 flex-1 text-white">
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Unlimited gym access</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Premium guidance & support</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Free dedicated locker</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>12 Personal training sessions</span></li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> <span>Complete diet & nutrition plan</span></li>
+                            <li class="flex items-center"><i data-feather="gift" class="text-green-500 mr-3 w-5 h-5"></i> <span>FREE Premium Gym Bag (₹1500)</span></li>
+                            <li class="flex items-center"><i data-feather="alert-triangle" class="text-green-500 mr-3 w-5 h-5"></i> <span>Limited to First 50 Members</span></li>
+                        </ul>
+                        <button class="w-full mt-auto bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3 px-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">Book Package</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Training Add-ons -->
+    <section class="py-16 bg-black" style="background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">PERSONAL TRAINING ADD-ONS</h2>
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                <div class="bg-gray-900 p-8 rounded-lg membership-card transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:z-20 h-full flex flex-col min-h-[420px]" data-aos="fade-up">
+                    <div class="bg-gray-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="user" class="text-gray-700 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Single Session</h3>
+                    <div class="text-3xl font-bold text-green-400 mb-4">₹800</div>
+                    <p class="text-gray-400 mb-6">One-on-one training session with certified trainer</p>
+                    <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded transition-all duration-300 transform hover:scale-105 mt-auto">Book Session</button>
+                </div>
+
+                <div class="bg-gray-900 p-8 rounded-lg membership-card transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:z-20 h-full flex flex-col min-h-[420px]" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gray-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="users" class="text-gray-700 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">5-Session Package</h3>
+                    <div class="text-3xl font-bold text-green-400 mb-2">₹3,500</div>
+                    <p class="text-sm text-green-400 mb-4">Save ₹500</p>
+                    <p class="text-gray-400 mb-6">Perfect for getting started with proper form and technique</p>
+                    <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded transition duration-300 mt-auto">Book Package</button>
+                </div>
+
+                <div class="bg-gray-900 p-8 rounded-lg membership-card transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:z-20 h-full flex flex-col min-h-[420px]" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gray-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="target" class="text-gray-700 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">10-Session Package</h3>
+                    <div class="text-3xl font-bold text-green-400 mb-2">₹6,500</div>
+                    <p class="text-sm text-green-400 mb-4">Save ₹1,500</p>
+                    <p class="text-gray-400 mb-6">Comprehensive training program for serious results</p>
+                    <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded transition duration-300 mt-auto">Book Package</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Benefits -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">MEMBERSHIP BENEFITS</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="bg-gray-800 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="clock" class="text-green-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Flexible Hours</h3>
+                    <p class="text-gray-400">Access from 5 AM to 10 PM, 7 days a week</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gray-800 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="shield" class="text-green-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">No Hidden Fees</h3>
+                    <p class="text-gray-400">Transparent pricing with no joining fees</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gray-800 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="pause" class="text-green-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Freeze Option</h3>
+                    <p class="text-gray-400">Pause membership for medical reasons</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-gray-800 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="award" class="text-green-500 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Expert Support</h3>
+                    <p class="text-gray-400">Certified trainers always available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Information -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12">PAYMENT INFORMATION</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-800 p-8 rounded-lg" data-aos="fade-right">
+                        <h3 class="text-xl font-bold mb-6 flex items-center">
+                            <i data-feather="credit-card" class="text-green-500 mr-3"></i>
+                            Payment Methods
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> Cash payments at reception</li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> UPI/Digital payments accepted</li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> Bank transfer available</li>
+                            <li class="flex items-center"><i data-feather="check" class="text-green-500 mr-3 w-5 h-5"></i> Card payments (Visa, MasterCard)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg" data-aos="fade-left">
+                        <h3 class="text-xl font-bold mb-6 flex items-center">
+                            <i data-feather="info" class="text-green-500 mr-3"></i>
+                            Important Notes
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i data-feather="arrow-right" class="text-green-500 mr-3 w-5 h-5 mt-0.5"></i> <span>Membership starts from date of payment</span></li>
+                            <li class="flex items-start"><i data-feather="arrow-right" class="text-green-500 mr-3 w-5 h-5 mt-0.5"></i> <span>Valid government ID required</span></li>
+                            <li class="flex items-start"><i data-feather="arrow-right" class="text-green-500 mr-3 w-5 h-5 mt-0.5"></i> <span>Medical clearance recommended</span></li>
+                            <li class="flex items-start"><i data-feather="arrow-right" class="text-green-500 mr-3 w-5 h-5 mt-0.5"></i> <span>Membership is non-transferable</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-black text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">READY TO START YOUR FITNESS JOURNEY?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join Orbit Fitness today and take the first step towards a healthier, stronger you.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contact.html" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Join Now</a>
+                <a href="contact.html#free-trial" class="bg-transparent text-green-400 hover:bg-green-600 hover:text-white font-bold py-3 px-8 border-2 border-green-600 rounded-full transition duration-300">Free Trial</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i data-feather="activity" class="text-green-500 mr-2"></i> Orbit Fitness
+                    </h3>
+                    <p class="mb-4">Pune's premium fitness destination with state-of-the-art facilities and expert trainers.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-green-400 transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="hover:text-green-400 transition duration-300">About Us</a></li>
+                        <li><a href="facilities.html" class="hover:text-green-400 transition duration-300">Facilities</a></li>
+                        <li><a href="membership.html" class="hover:text-green-400 transition duration-300">Membership</a></li>
+                        <li><a href="trainers.html" class="hover:text-green-400 transition duration-300">Trainers</a></li>
+                        <li><a href="contact.html" class="hover:text-green-400 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Opening Hours</h4>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between">
+                            <span>Monday - Friday</span>
+                            <span>5AM - 10PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>5AM - 10PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>5AM - 10PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <address class="not-italic">
+                        <p class="mb-2">4th Floor, Olive Orchard</p>
+                        <p class="mb-2">Unit No. 404, Sr. No. 126/2, Kala Khadak Rd</p>
+                        <p class="mb-2">Swami Vivekanand Nagar, Wakad, Pune</p>
+                        <p class="mb-2">Pimpri-Chinchwad, Maharashtra 411057</p>
+                        <p class="mb-2">+91 98765 43210</p>
+                        <p class="mb-2">info@Orbitfitness.com</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Orbit Fitness. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919876543210" class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50">
+        <i data-feather="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>

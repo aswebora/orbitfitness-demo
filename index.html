@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit Fitness - Best Gym in Wakad, Pimpri-Chinchwad | Affordable Fitness Center</title>
+    <meta name="description" content="Orbit Fitness in Wakad, Pimpri-Chinchwad offers premium fitness facilities with heavy equipment, expert trainers, and a clean environment. Open 5am to 10pm. Book a free trial today!">
+    <meta name="keywords" content="Gym in Wakad, Best Gym in Pimpri-Chinchwad, Affordable gym Pune, Fitness center Wakad, Orbit Fitness, Weight training Pune">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#16a34a">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- OpenGraph / Twitter SEO -->
+    <meta property="og:title" content="Orbit Fitness - Best Gym in Wakad, Pimpri-Chinchwad">
+    <meta property="og:description" content="Premium fitness with heavy equipment, expert trainers, and disciplined environment. Open 5AM–10PM.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:5500/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orbit Fitness - Best Gym in Wakad, Pimpri-Chinchwad">
+    <meta name="twitter:description" content="Premium fitness with heavy equipment, expert trainers, and disciplined environment. Open 5AM–10PM.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80">
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthClub",
+      "name": "Orbit Fitness",
+      "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80",
+      "telephone": "+91 98765 43210",
+      "email": "info@Orbitfitness.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4th Floor, Olive Orchard, Unit No. 404, Sr. No. 126/2, Kala Khadak Rd",
+        "addressLocality": "Wakad",
+        "addressRegion": "Maharashtra",
+        "postalCode": "411057",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 18.60835,
+        "longitude": 73.7604725
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "05:00",
+        "closes": "22:00"
+      }],
+      "url": "http://localhost:5500/"
+    }
+    </script>
+    <style>
+        /* Prevent horizontal overflow */
+        html, body { overflow-x: hidden; width: 100%; }
+        img, video, iframe { max-width: 100%; height: auto; }
+        :root {
+            --primary: #545050;
+            --secondary: #333333;
+            --dark: #121212;
+            --light: #f8f8f8;
+            --accent: #00ff00;
+        }
+
+        /* ===== Simple Hero + Features (user-requested home page style) ===== */
+        .simple-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), var(--hero-bg, none);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center; /* keep center focal point */
+        }
+        .simple-hero h1 { font-size: clamp(2.25rem, 6vw, 3.5rem); font-weight: 900; line-height: 1.1; font-style: italic; margin-bottom: clamp(1.25rem, 6vw, 3rem); }
+        .simple-hero h2 { font-size: clamp(1.125rem, 3.5vw, 1.5rem); font-weight: 400; color: #ccc; margin-top: 0.75rem; margin-bottom: 1.25rem; }
+        .simple-btn {
+            background: #09F8F8;
+            color: #000;
+            padding: 14px 40px;
+            font-size: 1.25rem;
+            border-radius: 9999px; /* pill */
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            display: inline-block;
+            text-decoration: none;
+            box-shadow:
+                inset 0 0 0 3px rgba(0,0,0,0.35),
+                0 0 25px rgba(9, 248, 248, 0.75),
+                0 0 60px rgba(9, 248, 248, 0.45);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+        }
+        .simple-btn:hover {
+            filter: brightness(1.05);
+            box-shadow:
+                inset 0 0 0 3px rgba(0,0,0,0.35),
+                0 0 35px rgba(9, 248, 248, 0.9),
+                0 0 90px rgba(9, 248, 248, 0.55);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .simple-btn:active { transform: translateY(0) scale(0.98); filter: brightness(0.98); }
+
+        .feature-section { background: #111; padding: 60px 20px; text-align: center; }
+        .feature-section h2 { font-size: clamp(1.25rem, 4vw, 1.75rem); margin-bottom: 40px; }
+        .feature-box { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .feature-card { background: #1a1a1a; padding: 25px; border-radius: 10px; width: 250px; transition: 0.3s; }
+        .feature-card:hover { background: #222; transform: translateY(-5px); }
+        .feature-card .icon { margin-bottom: 15px; color: #00d4d4; }
+        .feature-card .icon svg { width: 40px; height: 40px; stroke: #00d4d4; }
+        .feature-card h3 { font-size: 20px; margin-bottom: 10px; }
+        .feature-card p { font-size: 14px; color: #ccc; }
+        
+        /* Mobile hero adjustments */
+        @media (max-width: 768px) {
+            .simple-hero {
+                min-height: 100vh;
+                background-position: center center !important;
+            }
+            .simple-hero h1 { margin-bottom: 2.25rem; }
+            .simple-btn { padding: 16px 44px; font-size: 1.15rem; }
+        }
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Oswald', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('Gym i.png');
+            background-size: cover;
+            background-position: center 20%;
+            background-attachment: fixed;
+            border-bottom: 4px solid var(--primary);
+            min-height: 60vh;
+            position: relative;
+        }
+        /* Full-bleed video background for hero */
+        .hero-video-wrapper { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+        .hero-video-wrapper video { width: 100%; height: 100%; object-fit: cover; }
+        .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.35); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(128, 128, 128, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+        }
+        .membership-card {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .membership-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(128, 128, 128, 0.2);
+            border: 1px solid rgba(128, 128, 128, 0.3);
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .trainer-card:hover img {
+            transform: scale(1.05);
+        }
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Aligned check list */
+        .check-list { list-style: none; margin: 0; padding: 0; }
+        .check-list li { display: flex; align-items: center; gap: 0.75rem; }
+        .check-list li i, .check-list li svg { width: 24px; height: 24px; flex: 0 0 24px; color: var(--brand-blue); }
+
+        /* Gym Theme Enhancements */
+        .gym-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .card-shadow {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .highlight-card {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .hero-bg {
+                min-height: 50vh;
+                padding: 2rem 1rem;
+                background-attachment: scroll; /* prevent mobile horizontal shift */
+            }
+            .gym-section {
+                background-attachment: scroll;
+            }
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                max-width: 100vw;
+                overflow-x: hidden;
+            }
+            .text-4xl {
+                font-size: 2.5rem;
+            }
+            .text-6xl {
+                font-size: 3rem;
+            }
+            .membership-card {
+                margin-bottom: 1.5rem;
+            }
+            .membership-card:hover {
+                transform: none;
+            }
+            .grid {
+                gap: 1rem;
+            }
+            .py-16 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            .py-32 {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+            .px-8 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .text-xl {
+                font-size: 1.125rem;
+            }
+            .text-2xl {
+                font-size: 1.5rem;
+            }
+            .text-3xl {
+                font-size: 1.875rem;
+            }
+            .hero-bg {
+                min-height: 40vh;
+            }
+            .py-16 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+            .mb-12 {
+                margin-bottom: 2rem;
+            }
+            .space-x-8 > * + * {
+                margin-left: 1rem;
+            }
+        }
+
+        /* Shiny hover effect for navbar links */
+        nav a {
+            position: relative;
+            overflow: hidden;
+        }
+        nav a::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 120%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: left 0.5s;
+            pointer-events: none;
+        }
+        nav a:hover::after {
+            left: 120%;
+        }
+
+        /* Brand title hover glow removed */
+
+        /* Disable shiny sweep on brand link only */
+        .brand-link::after { content: none !important; }
+
+        /* Shining gradient text effect for brand title */
+        .brand-title {
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ffffff, #ff3333, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shineText 3s linear infinite;
+        }
+        @keyframes shineText {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        /* Hero title styling (glitch removed) */
+        .hero h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            color: white;
+            letter-spacing: 0.05em;
+        }
+        
+        /* ===== Brand Color System (from user palette) ===== */
+        :root {
+            --brand-black: #000000;
+            --brand-blue: #36B3E8;      /* light blue primary */
+            --brand-white: #FFFFFF;
+            --brand-darkgray: #1C1C1C;  /* section backgrounds, cards */
+            --brand-steel: #2F80ED;     /* hover, sub-headings */
+            --brand-lime: #00FF7F;      /* optional CTA */
+            --brand-lightgray: #F5F5F5; /* backgrounds */
+            --brand-mediumgray: #9E9E9E;/* secondary text, borders */
+        }
+        body { background-color: var(--brand-black); color: var(--brand-white); }
+        .bg-gray-900 { background-color: var(--brand-darkgray) !important; }
+        .bg-black { background-color: var(--brand-black) !important; }
+        .text-gray-400 { color: var(--brand-mediumgray) !important; }
+        .bg-gray-800 { background-color: #121212 !important; }
+        .border-gray-700 { border-color: var(--brand-darkgray) !important; }
+        .bg-gray-100 { background-color: var(--brand-lightgray) !important; }
+
+        /* Map Tailwind greens to brand blues */
+        .text-green-400, .text-green-500, .text-green-600 { color: var(--brand-blue) !important; }
+        .bg-green-500, .bg-green-600 { background-color: var(--brand-blue) !important; }
+        .bg-green-700 { background-color: var(--brand-steel) !important; }
+        .border-green-600 { border-color: var(--brand-steel) !important; }
+        .ring-green-600 { --tw-ring-color: var(--brand-steel) !important; }
+        .hover\:bg-green-600:hover { background-color: var(--brand-steel) !important; }
+        .hover\:bg-green-700:hover { background-color: #2366c8 !important; }
+        .hover\:text-green-400:hover { color: var(--brand-steel) !important; }
+
+        /* Links */
+        a { color: var(--brand-blue); }
+        a:hover { color: var(--brand-steel); }
+
+        /* Ticker effect for hero headline */
+        .ticker {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: transparent;
+            white-space: nowrap; /* removed borders as requested */
+        }
+        .ticker-content {
+            display: flex; /* continuous row */
+            animation: ticker-scroll 20s linear infinite;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            will-change: transform;
+        }
+        .ticker-content .loop { display: flex; }
+        .ticker-content span {
+            margin: 0 3rem;
+            color: var(--brand-blue);
+            font-style: italic;
+            font-size: clamp(4rem, 8vw, 10rem); /* doubled */
+        }
+        /* Reduce gap between consecutive tickers */
+        .ticker + .ticker { margin-top: -4.5rem; }
+        /* Seamless loop: move by half because we duplicate the content */
+        @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        /* Reverse direction variant */
+        .ticker--reverse .ticker-content { animation-name: ticker-scroll-reverse; }
+        @keyframes ticker-scroll-reverse { 0% { transform: translateX(0); } 100% { transform: translateX(50%); } }
+
+        /* ==== Disable moving ticker effect (make text static) ==== */
+        .ticker-content { animation: none !important; transform: none !important; }
+        .ticker--reverse .ticker-content { animation: none !important; transform: none !important; }
+        /* show only one copy of the text to avoid duplication */
+        .ticker-content .loop + .loop { display: none; }
+        /* reset spacing between the two rows */
+        .ticker + .ticker { margin-top: 0.75rem; }
+
+        /* WhatsApp buttons: fill green with white text/icon */
+        a[href*="wa.me"] {
+            background-color: #25D366 !important;
+            color: #ffffff !important;
+            border-color: #25D366 !important;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 9999px; /* pill */
+        }
+        a[href*="wa.me"]:hover { background-color: #1ebe5d !important; border-color: #1ebe5d !important; }
+        /* force icon to white inside WA buttons */
+        a[href*="wa.me"] svg,
+        a[href*="wa.me"] i { color: #ffffff !important; stroke: #ffffff !important; }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 overflow-x-hidden">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-green-600 text-white px-3 py-2 rounded">Skip to content</a>
+    <!-- Navigation -->
+    <nav class="bg-black text-white sticky top-0 z-50 shadow-lg border-b border-gray-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center brand-link" aria-label="Orbit Fitness Home">
+                <video class="h-10 md:h-12 w-auto object-contain" autoplay muted loop playsinline poster="logo.jpeg">
+                    <source src="logo vid.mp4" type="video/mp4" />
+                </video>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-green-400 font-medium">Home</a>
+                <a href="about.html" class="hover:text-green-400">About</a>
+                <a href="facilities.html" class="hover:text-green-400">Facilities</a>
+                <a href="membership.html" class="hover:text-green-400">Membership</a>
+                <a href="trainers.html" class="hover:text-green-400">Trainers</a>
+                <a href="contact.html" class="hover:text-green-400">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-4 py-3 border-t border-gray-700" role="menu" aria-hidden="true">
+            <a href="index.html" class="block py-3 px-2 hover:text-green-400 hover:bg-gray-700 rounded transition duration-200">Home</a>
+            <a href="about.html" class="block py-3 px-2 hover:text-green-400 hover:bg-gray-700 rounded transition duration-200">About</a>
+            <a href="facilities.html" class="block py-3 px-2 hover:text-green-400 hover:bg-gray-700 rounded transition duration-200">Facilities</a>
+            <a href="membership.html" class="block py-3 px-2 hover:text-green-400 hover:bg-gray-700 rounded transition duration-200">Membership</a>
+            <a href="trainers.html" class="block py-3 px-2 hover:text-green-400 hover:bg-gray-700 rounded transition duration-200">Trainers</a>
+            <a href="contact.html" class="block py-3 px-2 hover:text-green-400 hover:bg-gray-700 rounded transition duration-200">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Simplified per request) -->
+    <section id="main" class="simple-hero" style="--hero-bg: url('Gym%20i.png');">
+        <div>
+            <h1>YOUR FITNESS<br> YOUR ORBIT</h1>
+            
+            <a href="membership.html" class="simple-btn">JOIN NOW</a>
+        </div>
+    </section>
+
+    <!-- Features Section (Simplified) -->
+    <section class="feature-section">
+        <h2>WHY CHOOSE ORBIT FITNESS</h2>
+        <div class="feature-box">
+            <div class="feature-card">
+                <div class="icon"><i data-feather="clock"></i></div>
+                <h3>Flexible Hours</h3>
+                <p>Open early till late to fit your schedule.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i data-feather="user"></i></div>
+                <h3>Expert Trainers</h3>
+                <p>Certified professionals to guide your journey.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i data-feather="gift"></i></div>
+                <h3>Pre-Sales Offer</h3>
+                <p>Exclusive discounts when you join early.</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- ============================
+     FREE TRIAL SECTION START
+============================= -->
+<section class="py-16 bg-white" id="free-trial"> <!-- Section with padding and white background -->
+    <div class="container mx-auto px-4"> <!-- Centered container with padding -->
+
+        <!-- Wrapper with gradient background, rounded corners, and shadow -->
+        <div class="max-w-4xl mx-auto bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden">
+
+            <div class="md:flex"> <!-- Flex layout for large screens (2-column design) -->
+
+                <!-- ========================
+                     LEFT SIDE CONTENT
+                ========================= -->
+                <div class="md:w-1/2 p-8 text-white"> <!-- Left side takes 50% width on desktop -->
+                    
+                    <!-- Heading -->
+                    <h2 class="text-3xl font-bold mb-4">BOOK YOUR FREE TRIAL</h2>
+                    
+                    <!-- Description -->
+                    <p class="mb-6">
+                        Experience our world-class facilities and expert guidance with a complimentary trial session.
+                    </p>
+
+                    <!-- Feature list with icons -->
+                    <ul class="check-list space-y-3 mb-6">
+                        <li><i data-feather="check-circle"></i> 1-hour full access</li>
+                        <li><i data-feather="check-circle"></i> Trainer consultation</li>
+                        <li><i data-feather="check-circle"></i> No obligation</li>
+                    </ul>
+
+                    <!-- Buttons (WhatsApp + Call) -->
+                    <div class="flex items-center space-x-4">
+                        
+                        <!-- WhatsApp Button -->
+                        <a href="https://wa.me/919876543210"
+                           class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full flex items-center transition duration-300">
+                            <i data-feather="message-circle" class="mr-2"></i> WhatsApp
+                        </a>
+
+                        <!-- Call Now Button -->
+                        <a href="tel:+919876543210"
+                           class="bg-white hover:bg-gray-100 text-green-600 font-bold py-2 px-6 rounded-full flex items-center transition duration-300">
+                            <i data-feather="phone" class="mr-2"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+                <!-- ========================
+                     LEFT SIDE END
+                ========================= -->
+
+                <!-- ========================
+                     RIGHT SIDE FORM
+                ========================= -->
+                <div class="md:w-1/2 bg-gray-100 p-8"> <!-- Right side with light background -->
+
+                    <!-- Form heading -->
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Schedule Your Visit</h3>
+                    
+                    <!-- Trial Booking Form -->
+                    <form class="space-y-4">
+
+                        <!-- Name Input Field -->
+                        <input type="text" placeholder="Your Name"
+                               class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600">
+
+                        <!-- Phone Number Input -->
+                        <input type="tel" placeholder="Phone Number"
+                               class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600">
+
+                        <!-- Email Input (Optional) -->
+                        <input type="email" placeholder="Email (Optional)"
+                               class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600">
+
+                        <!-- Dropdown for Preferred Time -->
+                        <select class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600">
+                            <option>Preferred Time</option>
+                            <option>Morning (5AM - 11AM)</option>
+                            <option>Afternoon (11AM - 4PM)</option>
+                            <option>Evening (4PM - 10PM)</option>
+                        </select>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                                class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Book Free Trial
+                        </button>
+                    </form>
+                </div>
+                <!-- ========================
+                     RIGHT SIDE END
+                ========================= -->
+
+            </div> <!-- End of Flex container -->
+        </div> <!-- End of gradient box -->
+    </div> <!-- End of container -->
+</section>
+<!-- ============================
+     FREE TRIAL SECTION END
+============================= -->
+
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">WHAT OUR MEMBERS SAY</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-6 rounded-lg shadow" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/100x100/1" alt="Rahul Sharma" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Rahul Sharma</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Orbit Fitness has transformed my fitness journey. The trainers are knowledgeable and the equipment is top-notch. Best gym in Wakad!"</p>
+                </div>
+                <div class="testimonial-card p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/100x100/2" alt="Priya Patel" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Priya Patel</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"I love the early morning hours and how clean they keep the gym. The discipline here is unmatched. Highly recommend!"</p>
+                </div>
+                <div class="testimonial-card p-6 rounded-lg shadow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/100x100/3" alt="Vikram Joshi" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Vikram Joshi</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The trainers at Orbit are exceptional. They've helped me achieve my fitness goals with personalized guidance. Worth every rupee!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-4">OUR LOCATION</h2>
+                    <p class="text-gray-600 mb-6">Conveniently located in Wakad, Pimpri-Chinchwad with ample parking space.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i data-feather="map-pin" class="text-green-500 mr-3 mt-1"></i>
+                            <p>4th Floor, Olive Orchard, Unit No. 404, Sr. No. 126/2, Kala Khadak Rd, Swami Vivekanand Nagar, Wakad, Pimpri-Chinchwad, Maharashtra 411057</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="clock" class="text-green-500 mr-3"></i>
+                            <p>Monday to Sunday: 5:00 AM - 10:00 PM</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="phone" class="text-green-500 mr-3"></i>
+                            <p>+91 98765 43210</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="mail" class="text-green-500 mr-3"></i>
+                            <p>info@Orbitfitness.com</p>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="mt-6 inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded transition duration-300">Get Directions</a>
+                </div>
+                <div class="md:w-1/2 rounded-xl overflow-hidden shadow-xl" data-aos="fade-left">
+                    <iframe src="https://www.google.com/maps?q=18.60835,73.7604725&z=15&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-black text-white border-t-4 border-green-600">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">READY TO TRANSFORM YOUR BODY?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join Orbit Fitness today and take the first step towards a healthier, stronger you.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="membership.html" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Join Now</a>
+                <a href="#free-trial" class="bg-transparent text-green-400 hover:bg-green-600 hover:text-white font-bold py-3 px-8 border-2 border-green-600 rounded-full transition duration-300">Free Trial</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i data-feather="activity" class="text-green-500 mr-2"></i> Orbit Fitness
+                    </h3>
+                    <p class="mb-4">Pune's premium fitness destination with state-of-the-art facilities and expert trainers.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-green-400 transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="hover:text-green-400 transition duration-300">About Us</a></li>
+                        <li><a href="facilities.html" class="hover:text-green-400 transition duration-300">Facilities</a></li>
+                        <li><a href="membership.html" class="hover:text-green-400 transition duration-300">Membership</a></li>
+                        <li><a href="trainers.html" class="hover:text-green-400 transition duration-300">Trainers</a></li>
+                        <li><a href="contact.html" class="hover:text-green-400 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Opening Hours</h4>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between">
+                            <span>Monday - Friday</span>
+                            <span>5AM - 10PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>5AM - 10PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>5AM - 10PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <address class="not-italic">
+                        <p class="mb-2">4th Floor, Olive Orchard</p>
+                        <p class="mb-2">Unit No. 404, Sr. No. 126/2, Kala Khadak Rd</p>
+                        <p class="mb-2">Swami Vivekanand Nagar, Wakad, Pune</p>
+                        <p class="mb-2">Pimpri-Chinchwad, Maharashtra 411057</p>
+                        <p class="mb-2">+91 98765 43210</p>
+                        <p class="mb-2">info@Orbitfitness.com</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Orbit Fitness. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919876543210" class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50">
+        <i data-feather="message-circle" class="w-6 h-6"></i>
+    </a>
+    <!-- Breadcrumb JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "http://localhost:5500/"}
+      ]
+    }
+    </script>
+    <script src="assets/main.js"></script>
+</body>
+</html>
